@@ -1,0 +1,73 @@
+
+
+<mat-sidenav-container fullscreen>
+
+    <!--El mode es para darle un efecto
+    Lo del #sidebar es para hacer una referencia local del componente en otro lado
+En este caso en el botón-->
+<mat-sidenav #sidenav mode="push"> 
+
+    <mat-toolbar color="primary">
+        <span>Menú</span>
+
+        <span class="spacer"></span>
+
+        <button mat-icon-button
+        (click)="sidenav.toggle()">
+            <mat-icon>
+                menu
+            </mat-icon>
+            
+        </button>
+    </mat-toolbar>
+
+    <mat-nav-list>
+        <a routerLink="./listado"
+        mat-list-item
+        (click)="sidenav.toggle()">
+        <mat-icon mat-list-icon>label</mat-icon>
+            <span>Listado de Héroes</span>
+        </a>
+
+        <a routerLink="./agregar"
+        mat-list-item
+        (click)="sidenav.toggle()">
+        <mat-icon mat-list-icon>add</mat-icon>
+            <span>Agregar un Héroe</span>
+        </a>
+
+        <a routerLink="./buscar"
+        mat-list-item
+        (click)="sidenav.toggle()">
+        <mat-icon mat-list-icon>search</mat-icon>
+            <span>Buscar un Héroe</span>
+        </a>
+    </mat-nav-list>
+
+</mat-sidenav>
+
+<mat-toolbar >
+    <button mat-icon-button 
+    (click)="sidenav.toggle()">
+        <mat-icon>
+            menu
+        </mat-icon>
+    </button>
+
+    <span class="spacer"></span>
+
+    <span>{{auth.usuario}}</span>
+
+    <button mat-button
+            color="warn"
+            (click)="logout()">
+        Logout
+    </button>
+</mat-toolbar>
+
+<div class="container">
+    <router-outlet></router-outlet>
+</div>
+
+
+</mat-sidenav-container>

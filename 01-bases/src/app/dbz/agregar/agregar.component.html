@@ -1,0 +1,24 @@
+<h3>Agregar SEPARADO</h3>
+        <hr>
+
+        <form (ngSubmit)="agregar()">
+            <input
+             required
+              type="text"
+              name="Nombre"
+              placeholder="Nombre"
+              [(ngModel)]="nuevo.nombre"
+              />
+
+            <input
+            required
+            type="number" 
+            placeholder="Poder"
+            name="Poder"
+            [(ngModel)]="nuevo.poder"
+             />
+
+            <button type="submit">
+                Agregar
+            </button>
+        </form>

@@ -1,0 +1,43 @@
+
+<div class="text-layout">
+    <h1>Pipes Numéricos</h1>
+    <h2>DecimalPipe y Porcentaje</h2>
+    <p>
+        Pipes incluídos en Angular - Usualmente en el Common Module
+    </p>
+    <p>
+        Los Pipes solo hacen cambios visuales, no modifican los datos reales.
+    </p>
+</div>
+
+<div class="p-grid">
+    <div class="p-col-4">
+        <p-card
+        header="Ventas Netas"
+        subheader="del presente año">
+        <p>El número real es: {{ventasNetas}}</p>
+        <i class="pi pi-dollar"></i>
+        {{ventasNetas | number: '1.2-2'}}
+        </p-card>
+    </div>
+
+    <div class="p-col-4">
+        <p-card
+        header="Ventas Brutas"
+        subheader="del presente año">
+        <p>El número real es: {{ventasNetas}}</p>
+        
+        {{(ventasNetas + 2000000) | currency: 'CRC': 'symbol-narrow': '1.4-4'}}
+        </p-card>
+    </div>
+
+    <div class="p-col-4">
+        <p-card
+        header="Ganancia porcentual"
+        subheader="del presente año">
+        <p>El porcentaje real es: {{porcentaje}}</p>
+        
+        {{porcentaje | percent: '1.2-2'}}
+        </p-card>
+    </div>
+</div>

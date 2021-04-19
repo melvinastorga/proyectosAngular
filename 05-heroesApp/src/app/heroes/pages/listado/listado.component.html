@@ -1,0 +1,37 @@
+
+<h1>Listado de Héroes</h1>
+<mat-divider></mat-divider>
+
+<br>
+
+<div fxLayout="row wrap"
+      fxLayout.xs="column"
+      fxLayoutAlign="center"
+      fxLayoutGap="30px">
+
+    <div fxFlex="20"
+        fxFlex.lg="15"
+        fxFlex.sm="30"
+    *ngFor="let heroe of heroes">
+
+<app-heroe-tarjeta [heroe]="heroe"></app-heroe-tarjeta>
+
+    </div>
+</div>
+  
+<!--El mat-card-image hace que la imagen sea responsiva.
+fxLayoutAlign="center"  Este es para que quede todo centrado, misma distancia izq y der a los lados
+      fxLayoutGap="20px"> Este otro es para la separación entre los componentes, un espacio de 20
+    
+    Para que sea responsive:
+
+    <div fxLayout="row wrap" normalmente es en filas
+      fxLayout.xs="column"  Si es una pantalla pequeña se hace columna
+      fxLayoutAlign="center" Todo centrado
+      fxLayoutGap="30px"> Separación de 30 entre tarjetas
+      
+    <div fxFlex="20"  las tarjetas tienen un 20% del ancho normalmente
+        fxFlex.lg="15"  Si son pantallas muy grandes toman un 15% del ancho
+        fxFlex.sm="30"  Si son pantallas muy pequeñas toman un 30% del ancho.
+    *ngFor="let heroe of heroes">
+    -->
